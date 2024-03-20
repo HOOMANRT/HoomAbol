@@ -10,12 +10,18 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
+    register.cpp \
+    signup.cpp \
     splash.cpp
 
 HEADERS += \
+    register.h \
+    signup.h \
     splash.h
 
 FORMS += \
+    register.ui \
+    signup.ui \
     splash.ui
 
 # Default rules for deployment.
@@ -24,4 +30,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    Captcha.qrc \
+    Splash-img3.qrc \
     images.qrc
