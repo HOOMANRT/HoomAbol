@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>captcha.png</file>
+        <file>Screenshot 2024-03-20 144544.png</file>
+        <file>Screenshot 2024-03-20 144614.png</file>
+        <file>Screenshot 2024-03-20 144628.png</file>
+        <file>Screenshot 2024-03-20 144650.png</file>
+        <file>Screenshot 2024-03-20 144702.png</file>
+        <file>Screenshot 2024-03-20 144730.png</file>
+        <file>Screenshot 2024-03-20 144820.png</file>
+        <file>Screenshot 2024-03-20 144835.png</file>
+    </qresource>
+    <qresource prefix="/new/prefix2"/>
+</RCC>
