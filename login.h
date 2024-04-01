@@ -4,7 +4,7 @@
 #include <QMainWindow>
 
 
-extern QString Username;
+extern QString ID;
 
 namespace Ui {
 

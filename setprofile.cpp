@@ -1,6 +1,7 @@
 #include "setprofile.h"
 #include "ui_setprofile.h"
 #include "login.h"
+#include "QString"
 
 #include <QSqlDatabase>
 #include "QSqlDriver"
@@ -9,6 +10,7 @@
 
 int year, month, day;
 int Age = 18, swJobSeekers, swEmployers;
+QString userName,lastName;
 
 setProfile::setProfile(QWidget *parent) :
     QMainWindow(parent),
@@ -20,6 +22,28 @@ setProfile::setProfile(QWidget *parent) :
     database = QSqlDatabase::addDatabase("QSQLITE");
     database.setDatabaseName("d:\\Project\\Users3.db");
     database.open();
+
+    QSqlQuery q;
+    q.exec("SELECT name FROM jobSeekers WHERE id='"+ID+"'");
+    if(q.first()){
+        userName=(q.value(0).toString());
+        if(userName!=NULL){
+            ui->lineEdit->setPlaceholderText(QString("%1").arg(userName));
+        }
+        else{
+            ui->lineEdit->setPlaceholderText("Enter your Name :) ");
+        }
+    }
+    q.exec("SELECT lastname FROM jobSeekers WHERE id='"+ID+"'");
+    if(q.first()){
+        lastName=(q.value(0).toString());
+        if(lastName!=NULL){
+            ui->lineEdit_2->setPlaceholderText(QString("%1").arg(lastName));
+        }
+        else{
+            ui->lineEdit_2->setPlaceholderText("Enter your LastName :) ");
+        }
+    }
 
     ui->groupBox_4->setEnabled(false);
     ui->groupBox_5->setEnabled(false);
@@ -112,8 +136,8 @@ void setProfile::on_comboBox_activated(int index)
     case 9:
         ui->lineEdit_3->setPlaceholderText("United States");
         break;
-
     }
+
 }
 
 
@@ -164,7 +188,7 @@ void setProfile::on_pushButton_clicked()
 
 
         QSqlQuery q;
-        q.exec("UPDATE jobSeekers SET name = '"+Name+"', lastname = '"+Lastname+"', birthyear = '"+year+"', birthmonth = '"+month+"', birthday = '"+day+"', phoneNumber = '"+PhoneNum+"', schoolCollege = '"+SchoolCollege+"' , intendedJob = '"+IntendedJob+"' WHERE username = '"+Username+"'");
+        q.exec("UPDATE jobSeekers SET name = '"+Name+"', lastname = '"+Lastname+"', birthyear = '"+year+"', birthmonth = '"+month+"', birthday = '"+day+"', phoneNumber = '"+PhoneNum+"', schoolCollege = '"+SchoolCollege+"' , intendedJob = '"+IntendedJob+"' WHERE username = '"+ID+"'");
 
     }
     else{

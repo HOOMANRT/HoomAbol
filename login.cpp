@@ -65,8 +65,8 @@ void login::on_pushButton_clicked()
 {
     if(ui->lineEdit->text( ) != NULL && ui->lineEdit_2->text() != NULL ){
         QSqlQuery q;
-        Username = ui->lineEdit->text();
-        q.exec("SELECT password FROM jobSeekers WHERE username = '"+Username+"'");
+        ID = ui->lineEdit->text();
+        q.exec("SELECT password FROM jobSeekers WHERE id = '"+ID+"'");
         if(q.first()){
            QString  Password = q.value(0).toString();
             QString enterdPass = ui->lineEdit_2->text();

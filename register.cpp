@@ -10,7 +10,7 @@
 #include "QSqlQueryModel"
 
 int random;
-QString Username;
+QString ID;
 
 Register::Register(QWidget *parent) :
     QMainWindow(parent),
@@ -69,8 +69,8 @@ void Register::on_pushButton_clicked()
     int swDatabase = 1, swCaptcha;
 
     QSqlQuery q;
-    Username = ui->lineEdit->text();
-    q.exec("SELECT password FROM jobSeekers WHERE username = '"+Username+"'");
+    ID = ui->lineEdit->text();
+    q.exec("SELECT password FROM jobSeekers WHERE id = '"+ID+"'");
 
 
 
@@ -103,7 +103,7 @@ void Register::on_pushButton_clicked()
         }
     }
     else if(random == 3){
-        if(ui->lineEdit_3->text() == "GJwn"){
+        if(ui->lineEdit_3->text() == "GJWn"){
             swCaptcha = 1;
         }
         else{
@@ -127,7 +127,7 @@ void Register::on_pushButton_clicked()
         }
     }
     else if (random == 6){
-        if(ui->lineEdit_3->text() == "qvpxayk"){
+        if(ui->lineEdit_3->text() == "qVpXayK"){
             swCaptcha = 1;
         }
         else{
@@ -136,7 +136,7 @@ void Register::on_pushButton_clicked()
 
     }
     else if(random == 7){
-        if(ui->lineEdit_3->text() == "zXx32"){
+        if(ui->lineEdit_3->text() == "ZXx32"){
             swCaptcha = 1;
         }
         else{
@@ -155,9 +155,9 @@ void Register::on_pushButton_clicked()
     if(swCaptcha == 1 && swDatabase == 1){
         QSqlQuery q;
         QString Password;
-        Username = ui->lineEdit->text();
+        ID = ui->lineEdit->text();
         Password = ui->lineEdit_2->text();
-        q.exec("INSERT INTO jobSeekers(username, password) VALUES ('"+Username+"', '"+Password+"')");
+        q.exec("INSERT INTO jobSeekers(id, password) VALUES ('"+ID+"', '"+Password+"')");
         VerificationCode *pg4 = new VerificationCode;
         pg4->show();
         this->close();
