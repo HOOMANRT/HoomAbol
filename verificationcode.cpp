@@ -8,8 +8,6 @@
 #include "QTimer"
 #include "mainpage.h"
 
-
-
 int random2;
 bool swVerify=true;
 

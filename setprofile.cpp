@@ -2,7 +2,6 @@
 #include "ui_setprofile.h"
 #include "login.h"
 
-
 #include <QSqlDatabase>
 #include "QSqlDriver"
 #include "QSqlQuery"
@@ -10,7 +9,6 @@
 
 int year, month, day;
 int Age = 18, swJobSeekers, swEmployers;
-
 
 setProfile::setProfile(QWidget *parent) :
     QMainWindow(parent),
@@ -20,14 +18,11 @@ setProfile::setProfile(QWidget *parent) :
 
     QSqlDatabase database;
     database = QSqlDatabase::addDatabase("QSQLITE");
-    database.setDatabaseName("d:\\Users3.db");
+    database.setDatabaseName("d:\\Project\\Users3.db");
     database.open();
-
 
     ui->groupBox_4->setEnabled(false);
     ui->groupBox_5->setEnabled(false);
-
-
 
     ui->comboBox->addItem("");
     ui->comboBox->addItem("54");

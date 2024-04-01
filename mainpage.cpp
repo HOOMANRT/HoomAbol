@@ -2,11 +2,22 @@
 #include "ui_mainpage.h"
 #include "setprofile.h"
 
+#include <QSqlDatabase>
+#include "QSqlDriver"
+#include "QSqlQuery"
+#include "QSqlQueryModel"
+
 mainPage::mainPage(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::mainPage)
 {
     ui->setupUi(this);
+
+    QSqlDatabase database;
+    database = QSqlDatabase::addDatabase("QSQLITE");
+    database.setDatabaseName("d:\\Project\\Users3.db");
+    database.open();
+
     ui->groupBox_2->hide();
 
 }

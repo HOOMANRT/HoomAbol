@@ -4,18 +4,13 @@
 #include <QMessageBox>
 #include "verificationcode.h"
 
-
-
 #include <QSqlDatabase>
 #include "QSqlDriver"
 #include "QSqlQuery"
 #include "QSqlQueryModel"
 
-
-
 int random;
 QString Username;
-
 
 Register::Register(QWidget *parent) :
     QMainWindow(parent),
@@ -25,9 +20,8 @@ Register::Register(QWidget *parent) :
 
     QSqlDatabase database;
     database = QSqlDatabase::addDatabase("QSQLITE");
-    database.setDatabaseName("d:\\Users3.db");
+    database.setDatabaseName("d:\\Project\\Users3.db");
     database.open();
-
 
     random = rand() % 9;
     switch (random) {
@@ -166,6 +160,7 @@ void Register::on_pushButton_clicked()
         q.exec("INSERT INTO jobSeekers(username, password) VALUES ('"+Username+"', '"+Password+"')");
         VerificationCode *pg4 = new VerificationCode;
         pg4->show();
+        this->close();
 
     }
     else if(swDatabase == 0 && swCaptcha == 1){

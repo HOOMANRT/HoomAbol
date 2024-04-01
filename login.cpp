@@ -20,7 +20,7 @@ login::login(QWidget *parent) :
 
     QSqlDatabase database;
     database = QSqlDatabase::addDatabase("QSQLITE");
-    database.setDatabaseName("d:\\Users3.db");
+    database.setDatabaseName("d:\\Project\\Users3.db");
     database.open();
 
 }

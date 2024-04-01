@@ -13,11 +13,11 @@ Splash::Splash(QWidget *parent)
     , ui(new Ui::Splash)
 {
     ui->setupUi(this);
+
     ui->label->setStyleSheet("image: url(:/new/prefix1/Splash-img.png);");
     ui->textBrowser->hide();
     ui->textBrowser_2->hide();
     ui->textBrowser_3->hide();
-
 
 }
 
@@ -88,6 +88,7 @@ void Splash::on_pushButton_clicked()
 {
     login *pg2 = new login;
     pg2->show();
+    this->close();
 }
 
 
