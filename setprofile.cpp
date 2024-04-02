@@ -8,7 +8,7 @@
 #include "QSqlQuery"
 #include "QSqlQueryModel"
 
-int year, month, day;
+QString year, month, day;
 int Age = 18, swJobSeekers, swEmployers;
 QString userName,lastName;
 
@@ -140,7 +140,6 @@ void setProfile::on_comboBox_activated(int index)
 
 }
 
-
 void setProfile::on_comboBox_2_activated(int index)
 {
     switch (index) {
@@ -159,23 +158,11 @@ void setProfile::on_comboBox_2_activated(int index)
     }
 }
 
-
-void setProfile::on_dateEdit_userDateChanged(const QDate &date)
-{
-    year = date.year();
-    month = date.month();
-    day = date.day();
-
-}
-
-
-
-
 void setProfile::on_pushButton_clicked()
 {
     QString Name = ui->lineEdit->text();
     QString Lastname = ui->lineEdit_2->text();
-    QString PhoneNum = ui->lineEdit_3->text();
+    QString PhoneNum =ui->comboBox->currentText()+'-'+ ui->lineEdit_3->text();
 
     if(swJobSeekers == 1){
         QString SchoolCollege = ui->lineEdit_4->text();
@@ -184,22 +171,15 @@ void setProfile::on_pushButton_clicked()
 
         QVariant selectedItem2 = ui->comboBox_4->currentData();
         QString IntendedCompany = selectedItem2.toString();
-        QString Post = "Job seeker";
+
 
 
         QSqlQuery q;
-        q.exec("UPDATE jobSeekers SET name = '"+Name+"', lastname = '"+Lastname+"', birthyear = '"+year+"', birthmonth = '"+month+"', birthday = '"+day+"', phoneNumber = '"+PhoneNum+"', schoolCollege = '"+SchoolCollege+"' , intendedJob = '"+IntendedJob+"' WHERE username = '"+ID+"'");
+        q.exec("UPDATE jobSeekers SET name = '"+Name+"', lastname = '"+Lastname+"', birthday = '"+day+"', phoneNumber = '"+PhoneNum+"', schoolCollege = '"+SchoolCollege+"' WHERE id = '"+ID+"'");
 
     }
     else{
 
     }
 
-
-
-
 }
-
-
-
-

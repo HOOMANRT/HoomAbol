@@ -17,10 +17,15 @@ public:
     explicit Register(QWidget *parent = nullptr);
     ~Register();
 
+public slots:
+    void CheckCaptcha();
+    void GenCaptcha();
 private slots:
     void on_pushButton_clicked();
 
 
+
+    void on_comboBox_activated(int index);
 
 private:
     Ui::Register *ui;
