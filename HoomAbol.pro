@@ -20,11 +20,10 @@ SOURCES += \
 HEADERS += \
     login.h \
     mainpage.h \
-    register.h \   \
+    register.h \
     setprofile.h \
     splash.h \
     verificationcode.h
-    splash.h
 
 FORMS += \
     login.ui \
@@ -40,10 +39,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    Captcha.qrc \
-    Login-img.qrc \
-    Splash-img3.qrc \
-    Splash-img4.qrc \
-    Splash-imgtest.qrc \
-    images.qrc \
-    splash-imgtest2.qrc
+    Images/images.qrc

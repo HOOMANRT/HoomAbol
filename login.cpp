@@ -1,10 +1,10 @@
 #include "login.h"
 #include "ui_login.h"
 #include "register.h"
-#include "QMessageBox"
-#include "verificationcode.h"
-#include "setprofile.h"
+//#include "verificationcode.h"
+//#include "setprofile.h"
 #include "mainpage.h"
+#include "QMessageBox"
 
 #include <QSqlDatabase>
 #include "QSqlDriver"
@@ -23,6 +23,11 @@ login::login(QWidget *parent) :
     database.setDatabaseName("d:\\Project\\Users3.db");
     database.open();
 
+//    QPixmap backgroundImage(":/back-login-1.jpg");
+//    backgroundImage = backgroundImage.scaled(this->size(), Qt::KeepAspectRatioByExpanding);
+
+    //->setPixmap(backgroundImage);
+
 }
 
 login::~login()
@@ -38,14 +43,12 @@ void login::on_pushButton_5_clicked()
             ui->groupBox->setStyleSheet("background-color: rgb(0, 0, 0);");
             ui->label_2->setStyleSheet("color: rgb(255, 255, 255);");
             ui->label_9->setStyleSheet("color: rgb(255, 255, 255);");
-            ui->label_10->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-21 205539.png);");
             theme2++;
             break;
         case 1:
             ui->groupBox->setStyleSheet("background-color: rgb(255, 255, 255);");
             ui->label_2->setStyleSheet("color: rgb(0, 0, 0);");
             ui->label_9->setStyleSheet("color: rgb(0, 0, 0);");
-            ui->label_10->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-21 200502.png);");
             theme2--;
             break;
         }

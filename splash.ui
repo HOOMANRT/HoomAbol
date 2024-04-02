@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1189</width>
-    <height>665</height>
+    <width>1124</width>
+    <height>709</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,10 +17,10 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>0</x>
       <y>0</y>
-      <width>1051</width>
-      <height>651</height>
+      <width>1101</width>
+      <height>671</height>
      </rect>
     </property>
     <property name="font">
@@ -47,6 +47,9 @@ background-color: rgb(199, 255, 247);
        <width>251</width>
        <height>191</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/board/im-splash-1.png);</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
@@ -274,7 +277,7 @@ background-color: rgb(0, 255, 136);</string>
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;HoomAbol is a social networking platform designed for professionals to connect, network, and build relationships. It is commonly used for job searching, recruiting, and professional development.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
@@ -295,7 +298,7 @@ color: rgb(0, 0, 0);</string>
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;It is used by individuals looking for job opportunities, businesses looking to recruit talent and organizations looking to market their products or services.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
@@ -316,7 +319,7 @@ background-color: rgb(0, 221, 255);</string>
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;LinkedIn offers a range of features that make it a popular choice for professionals, including:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;1. Networking opportunities: LinkedIn allows users to connect with colleagues, industry peers, and potential employers, making it a valuable tool for expanding one's professional network.&lt;/span&gt;&lt;/p&gt;
@@ -358,7 +361,7 @@ p, li { white-space: pre-wrap; }
     <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>260</x>
+       <x>210</x>
        <y>20</y>
        <width>61</width>
        <height>61</height>
@@ -394,7 +397,7 @@ p, li { white-space: pre-wrap; }
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/new/prefix1/Spalsh-imge3.png);</string>
+      <string notr="true">image: url(:/icon/icon-theme.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -410,7 +413,7 @@ p, li { white-space: pre-wrap; }
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/new/prefix1/Screenshot 2024-03-21 204309.png);</string>
+      <string notr="true">image: url(:/board/im-splash-2.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -423,8 +426,8 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1189</width>
-     <height>25</height>
+     <width>1124</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>

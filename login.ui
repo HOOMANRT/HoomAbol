@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1136</width>
-    <height>600</height>
+    <width>1195</width>
+    <height>756</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>-10</y>
+      <y>0</y>
       <width>1041</width>
       <height>581</height>
      </rect>
@@ -202,7 +202,7 @@ color: rgb(255, 255, 255);</string>
        <x>430</x>
        <y>30</y>
        <width>80</width>
-       <height>51</height>
+       <height>46</height>
       </rect>
      </property>
      <property name="font">
@@ -212,7 +212,7 @@ color: rgb(255, 255, 255);</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/new/prefix1/Spalsh-imge3.png);</string>
+      <string notr="true">image: url(:/icon/icon-theme.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -293,22 +293,6 @@ color: rgb(255, 255, 255);</string>
       <string>________________________________</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_10">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
-       <y>90</y>
-       <width>671</width>
-       <height>461</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">image: url(:/new/prefix1/Screenshot 2024-03-21 200502.png);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -316,8 +300,8 @@ color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1136</width>
-     <height>25</height>
+     <width>1195</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>

@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/captch">
+        <file>cap-1.png</file>
+        <file>cap-2.png</file>
+        <file>cap-3.png</file>
+        <file>cap-4.png</file>
+        <file>cap-5.png</file>
+        <file>cap-6.png</file>
+        <file>cap-7.png</file>
+        <file>cap-8.png</file>
+        <file>cap-9.png</file>
+    </qresource>
+    <qresource prefix="/back">
+        <file>back-captcha-1.jpg</file>
+        <file>back-login-1.jpg</file>
+        <file>back-verify-1.jpg</file>
+    </qresource>
+    <qresource prefix="/icon">
+        <file>icon-theme.png</file>
+    </qresource>
+    <qresource prefix="/board">
+        <file>im-.png</file>
+        <file>im-login-1.png</file>
+        <file>im-login-1-drk.png</file>
+        <file>im-splash-1.png</file>
+        <file>im-splash-2.png</file>
+    </qresource>
+</RCC>

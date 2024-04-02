@@ -26,31 +26,31 @@ Register::Register(QWidget *parent) :
     random = rand() % 9;
     switch (random) {
     case 0:
-        ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144544.png);");
+        ui->label_3->setStyleSheet("image: url(:/captch/cap-2.png);");
         break;
     case 1:
-        ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144614.png);");
+        ui->label_3->setStyleSheet("image: url(:/captch/cap-3.png);");
         break;
     case 2:
-        ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144628.png);");
+        ui->label_3->setStyleSheet("image: url(:/captch/cap-4.png);");
         break;
     case 3:
-        ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144650.png);");
+        ui->label_3->setStyleSheet("image: url(:/captch/cap-5.png);");
         break;
     case 4:
-        ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144702.png);");
+        ui->label_3->setStyleSheet("image: url(:/captch/cap-6.png);");
         break;
     case 5:
-        ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144730.png);");
+        ui->label_3->setStyleSheet("image: url(:/captch/cap-7.png);");
         break;
     case 6:
-        ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144820.png);");
+        ui->label_3->setStyleSheet("image: url(:/captch/cap-8.png);");
         break;
     case 7:
-        ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144835.png);");
+        ui->label_3->setStyleSheet("image: url(:/captch/cap-9.png);");
         break;
     case 8:
-        ui->label_3->setStyleSheet("image: url(:/new/prefix1/captcha.png);");
+        ui->label_3->setStyleSheet("image: url(:/captch/cap-1.png);");
         break;
 
     }
@@ -168,31 +168,31 @@ void Register::on_pushButton_clicked()
         random = rand() % 9;
         switch (random) {
         case 0:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144544.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-2.png);");
             break;
         case 1:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144614.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-3.png);");
             break;
         case 2:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144628.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-4.png);");
             break;
         case 3:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144650.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-5.png);");
             break;
         case 4:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144702.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-6.png);");
             break;
         case 5:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144730.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-7.png);");
             break;
         case 6:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144820.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-8.png);");
             break;
         case 7:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144835.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-9.png);");
             break;
         case 8:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/captcha.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-1.png);");
             break;
 
         }
@@ -203,31 +203,31 @@ void Register::on_pushButton_clicked()
         random = rand() % 9;
         switch (random) {
         case 0:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144544.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-2.png);");
             break;
         case 1:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144614.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-3.png);");
             break;
         case 2:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144628.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-4.png);");
             break;
         case 3:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144650.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-5.png);");
             break;
         case 4:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144702.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-6.png);");
             break;
         case 5:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144730.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-7.png);");
             break;
         case 6:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144820.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-8.png);");
             break;
         case 7:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144835.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-9.png);");
             break;
         case 8:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/captcha.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-1.png);");
             break;
 
         }
@@ -246,31 +246,31 @@ void Register::on_pushButton_clicked()
         random = rand() % 9;
         switch (random) {
         case 0:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144544.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-2.png);");
             break;
         case 1:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144614.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-3.png);");
             break;
         case 2:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144628.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-4.png);");
             break;
         case 3:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144650.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-5.png);");
             break;
         case 4:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144702.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-6.png);");
             break;
         case 5:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144730.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-7.png);");
             break;
         case 6:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144820.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-8.png);");
             break;
         case 7:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/Screenshot 2024-03-20 144835.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-9.png);");
             break;
         case 8:
-            ui->label_3->setStyleSheet("image: url(:/new/prefix1/captcha.png);");
+            ui->label_3->setStyleSheet("image: url(:/captch/cap-1.png);");
             break;
 
         }

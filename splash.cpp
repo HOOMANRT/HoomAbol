@@ -1,7 +1,12 @@
 #include "splash.h"
 #include "ui_splash.h"
 #include "login.h"
+
 #include <iostream>
+#include <QApplication>
+#include <QWidget>
+#include <QPushButton>
+#include <QPropertyAnimation>
 
 int textBrowser1 = 0;
 int textBrowser2 = 0;
@@ -14,7 +19,9 @@ Splash::Splash(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->label->setStyleSheet("image: url(:/new/prefix1/Splash-img.png);");
+
+
+
     ui->textBrowser->hide();
     ui->textBrowser_2->hide();
     ui->textBrowser_3->hide();
