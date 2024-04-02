@@ -8,8 +8,9 @@
 #include "QSqlQuery"
 #include "QSqlQueryModel"
 
-int year, month, day;
-int Age = 18, swJobSeekers, swEmployers;
+
+QString year, month, day;
+int swJobSeekers, swEmployers;
 QString userName,lastName;
 
 setProfile::setProfile(QWidget *parent) :
@@ -160,14 +161,6 @@ void setProfile::on_comboBox_2_activated(int index)
 }
 
 
-void setProfile::on_dateEdit_userDateChanged(const QDate &date)
-{
-    year = date.year();
-    month = date.month();
-    day = date.day();
-
-}
-
 
 
 
@@ -175,20 +168,25 @@ void setProfile::on_pushButton_clicked()
 {
     QString Name = ui->lineEdit->text();
     QString Lastname = ui->lineEdit_2->text();
-    QString PhoneNum = ui->lineEdit_3->text();
+    QString PhoneNum = ui->comboBox->currentText() + '-' + ui->lineEdit_3->text();
+
+    month = ui->lineEdit_5->text();
+    day = ui->lineEdit_6->text();
+    year = ui->lineEdit_7->text();
+
+    QString Birthday = month + ',' + day + ',' + year;
 
     if(swJobSeekers == 1){
         QString SchoolCollege = ui->lineEdit_4->text();
-        QVariant selectedItem = ui->comboBox_3->currentData();
-        QString IntendedJob = selectedItem.toString();
-
-        QVariant selectedItem2 = ui->comboBox_4->currentData();
-        QString IntendedCompany = selectedItem2.toString();
-        QString Post = "Job seeker";
+        QString IntendedJob = ui->comboBox_3->currentText();
+        QString IntendedCompany = ui->comboBox_4->currentText();
 
 
+
+        ui->label_10->setText(IntendedJob);
         QSqlQuery q;
-        q.exec("UPDATE jobSeekers SET name = '"+Name+"', lastname = '"+Lastname+"', birthyear = '"+year+"', birthmonth = '"+month+"', birthday = '"+day+"', phoneNumber = '"+PhoneNum+"', schoolCollege = '"+SchoolCollege+"' , intendedJob = '"+IntendedJob+"' WHERE username = '"+ID+"'");
+
+        q.exec("UPDATE jobSeekers SET  job = '"+IntendedJob+"' WHERE id = '"+ID+"'");
 
     }
     else{

@@ -20,7 +20,6 @@ private slots:
 
     void on_comboBox_2_activated(int index);
 
-    void on_dateEdit_userDateChanged(const QDate &date);
 
     void on_pushButton_clicked();
 
