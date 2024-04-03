@@ -13,14 +13,17 @@
   <property name="windowTitle">
    <string>Splash</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(85, 255, 0);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1101</width>
-      <height>671</height>
+      <width>1124</width>
+      <height>709</height>
      </rect>
     </property>
     <property name="font">
@@ -386,8 +389,8 @@ p, li { white-space: pre-wrap; }
       <rect>
        <x>460</x>
        <y>20</y>
-       <width>80</width>
-       <height>51</height>
+       <width>78</width>
+       <height>45</height>
       </rect>
      </property>
      <property name="font">
