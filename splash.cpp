@@ -1,6 +1,8 @@
 #include "splash.h"
 #include "ui_splash.h"
 #include "login.h"
+#include "verificationcode.h"
+#include "register.h"
 
 #include <iostream>
 #include <QApplication>

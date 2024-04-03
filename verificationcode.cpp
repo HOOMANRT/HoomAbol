@@ -7,6 +7,13 @@
 #include <QMessageBox>
 #include "QTimer"
 #include "mainpage.h"
+#include "login.h"
+
+#include <QSqlDatabase>
+#include "QSqlDriver"
+#include "QSqlQuery"
+#include "QSqlQueryModel"
+
 
 int random2;
 bool swVerify=true;
@@ -16,6 +23,11 @@ VerificationCode::VerificationCode(QWidget *parent) :
     ui(new Ui::VerificationCode)
 {
     ui->setupUi(this);
+
+    QSqlDatabase database;
+       database = QSqlDatabase::addDatabase("QSQLITE");
+       database.setDatabaseName("d:\\Project\\Users3.db");
+       database.open();
 
     ui->label->hide();
     ui->lineEdit->setValidator(new QIntValidator);
@@ -108,7 +120,8 @@ void VerificationCode::on_pushButton_clicked()
 
     verify();
      if(swVerify){
-
+         QSqlQuery q;
+                q.exec("UPDATE jobSeekers SET phoneNumber WHERE id = '"+ID+"' " ) ;
      }
      else{
          swVerify=true;

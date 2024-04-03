@@ -5,7 +5,7 @@
 
 
 extern QString ID;
-
+extern QString PhoneNumber;
 namespace Ui {
 
 

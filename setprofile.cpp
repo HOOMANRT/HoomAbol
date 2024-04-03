@@ -8,9 +8,9 @@
 #include "QSqlQuery"
 #include "QSqlQueryModel"
 
-
 QString year, month, day;
 int swJobSeekers, swEmployers;
+
 QString userName,lastName;
 
 setProfile::setProfile(QWidget *parent) :
@@ -167,7 +167,6 @@ void setProfile::on_comboBox_activated(int index)
 
 }
 
-
 void setProfile::on_comboBox_2_activated(int index)
 {
     switch (index) {
@@ -185,10 +184,6 @@ void setProfile::on_comboBox_2_activated(int index)
         break;
     }
 }
-
-
-
-
 
 void setProfile::on_pushButton_clicked()
 {
@@ -211,17 +206,9 @@ void setProfile::on_pushButton_clicked()
         QString IntendedCompany = ui->comboBox_4->currentText();
 
         q.exec("UPDATE jobSeekers SET schoolCollege = '"+SchoolCollege+"', job = '"+IntendedJob+"', company = '"+IntendedCompany+"' WHERE id = '"+ID+"'");
-
     }
     else{
 
     }
 
-
-
-
 }
-
-
-
-
