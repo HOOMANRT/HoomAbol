@@ -2,6 +2,8 @@
 #include "ui_setprofile.h"
 #include "login.h"
 #include "QString"
+#include <QMessageBox>
+#include "verificationcode.h"
 
 #include <QSqlDatabase>
 #include "QSqlDriver"
@@ -10,6 +12,7 @@
 
 QString year, month, day;
 int swJobSeekers, swEmployers;
+QString Birthday;
 
 QString userName,lastName;
 
@@ -45,6 +48,7 @@ setProfile::setProfile(QWidget *parent) :
             ui->lineEdit_2->setPlaceholderText("Enter your LastName :) ");
         }
     }
+
 
     ui->groupBox_4->setEnabled(false);
     ui->groupBox_5->setEnabled(false);
@@ -187,28 +191,65 @@ void setProfile::on_comboBox_2_activated(int index)
 
 void setProfile::on_pushButton_clicked()
 {
-    QString Name = ui->lineEdit->text();
-    QString Lastname = ui->lineEdit_2->text();
-    QString PhoneNum = ui->comboBox->currentText() + '-' + ui->lineEdit_3->text();
-
-    month = ui->comboBox_5->currentText();
-    day = ui->comboBox_6->currentText();
-    year = ui->comboBox_7->currentText();
-
-    QString Birthday = month + "," + day + "," + year;
 
     QSqlQuery q;
-    q.exec("UPDATE jobSeekers SET name = '"+Name+"' , lastname = '"+Lastname+"', phoneNumber = '"+PhoneNum+"' , birthday = '"+Birthday+"' WHERE id = '"+ID+"'");
+
+    if(ui->lineEdit->text() != NULL){
+        QString Name = ui->lineEdit->text();
+        q.exec("UPDATE jobSeekers SET name = '"+Name+"' WHERE id = '"+ID+"'");
+    }
+    if(ui->lineEdit_2->text() != NULL){
+        QString Lastname = ui->lineEdit_2->text();
+        q.exec("UPDATE jobSeekers SET lastname = '"+Lastname+"' WHERE id = '"+ID+"'");
+    }
+
+    if(ui->lineEdit_3->text() != NULL){
+        PhoneNumber = ui->comboBox->currentText() + '-' + ui->lineEdit_3->text();
+        q.exec("SELECT password FROM jobSeekers WHERE phoneNumber = '"+PhoneNumber+"'");
+        if(q.first()){
+            QMessageBox::warning(this, "Error", "Phone number already exist!");;
+        }
+        else{
+            VerificationCode *pg6 = new VerificationCode;
+            pg6->show();
+            this->close();
+        }
+    }
+    if(ui->comboBox_5->currentText() != NULL && ui->comboBox_6->currentText() != NULL && ui->comboBox_7->currentText() != NULL){
+        month = ui->comboBox_5->currentText();
+        day = ui->comboBox_6->currentText();
+        year = ui->comboBox_7->currentText();
+
+        Birthday = month + "," + day + "," + year;
+        q.exec("UPDATE jobSeekers SET birthday = '"+Birthday+"' WHERE id = '"+ID+"'");
+    }
+
 
     if(swJobSeekers == 1){
-        QString SchoolCollege = ui->lineEdit_4->text();
-        QString IntendedJob = ui->comboBox_3->currentText();
-        QString IntendedCompany = ui->comboBox_4->currentText();
+        if(ui->lineEdit_4->text() != NULL){
+            QString SchoolCollege = ui->lineEdit_4->text();
+            q.exec("UPDATE jobSeekers SET schoolCollege = '"+SchoolCollege+"' WHERE id = '"+ID+"'");
+        }
 
-        q.exec("UPDATE jobSeekers SET schoolCollege = '"+SchoolCollege+"', job = '"+IntendedJob+"', company = '"+IntendedCompany+"' WHERE id = '"+ID+"'");
+        if(ui->comboBox_3->currentText() != NULL){
+            QString IntendedJob = ui->comboBox_3->currentText();
+            q.exec("UPDATE jobSeekers SET job = '"+IntendedJob+"' WHERE id = '"+ID+"'");
+        }
+
+        if(ui->comboBox_4->currentText() != NULL){
+             QString IntendedCompany = ui->comboBox_4->currentText();
+             q.exec("UPDATE jobSeekers SET company = '"+IntendedCompany+"' WHERE id = '"+ID+"'");
+        }
+
     }
     else{
 
     }
 
 }
+
+void setProfile::on_comboBox_7_activated()
+{
+    ui->label_20->setNum(2024 - ui->comboBox_7->currentText().toInt());
+}
+

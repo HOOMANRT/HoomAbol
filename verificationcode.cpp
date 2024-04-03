@@ -67,6 +67,10 @@ void VerificationCode::verify()
         ui->lineEdit_3->setEnabled(false);
         ui->lineEdit_4->setEnabled(false);
         ui->label->hide();
+        ui->lineEdit->setText(NULL);
+        ui->lineEdit_2->setText(NULL);
+        ui->lineEdit_3->setText(NULL);
+        ui->lineEdit_4->setText(NULL);
         ui->pushButton_2->setFocus();
         ui->pushButton_2->setDefault(true);
         ui->pushButton_2->setAutoDefault(false);
@@ -121,7 +125,7 @@ void VerificationCode::on_pushButton_clicked()
     verify();
      if(swVerify){
          QSqlQuery q;
-                q.exec("UPDATE jobSeekers SET phoneNumber WHERE id = '"+ID+"' " ) ;
+                q.exec("UPDATE jobSeekers SET phoneNumber = '"+PhoneNumber+"' WHERE id = '"+ID+"' " ) ;
      }
      else{
          swVerify=true;

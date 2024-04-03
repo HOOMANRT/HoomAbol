@@ -12,13 +12,15 @@
 int random;
 QString ID;
 QString PhoneNumber;
-int swReCaptcha=0,swDatabase = 1, swCaptcha;
+int swReCaptcha=0,swDatabase = 1, swCaptcha, swPhone = 1;
 
 Register::Register(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Register)
 {
     ui->setupUi(this);
+
+    setWindowTitle("Register");
 
     QSqlDatabase database;
         database = QSqlDatabase::addDatabase("QSQLITE");
@@ -48,32 +50,79 @@ void Register::on_pushButton_clicked()
 {
     if(ui->lineEdit->text() != NULL && ui->lineEdit_2->text() !=NULL && ui->lineEdit_3->text() != NULL && ui->lineEdit_4 ->text()!= NULL){
             swCaptcha=swDatabase=1;
-            QSqlQuery q;
+            QSqlQuery q, p;
             ID = ui->lineEdit->text();
+            PhoneNumber = ui->comboBox->currentText() + "-" + ui->lineEdit_4->text();
             q.exec("SELECT password FROM jobSeekers WHERE id = '"+ID+"'");
             if(q.first()){
                 swDatabase = 0;
             }
+            p.exec("SELECT password FROM jobSeekers WHERE phoneNumber = '"+PhoneNumber+"'");
+            if(p.first()){
+                swPhone = 0;
+            }
 
             CheckCaptcha();
-            if(swCaptcha == 1 && swDatabase == 1){
+            if(swCaptcha == 1 && swDatabase == 1 && swPhone == 1){
                 QSqlQuery q;
                 QString Password;
                // Username = ui->lineEdit->text();
                 Password = ui->lineEdit_2->text();
-                PhoneNumber= ui->lineEdit_4->text();
-                q.exec("INSERT INTO jobSeekers(username, password,phoneNember) VALUES ('"+ID+"', '"+Password+"','"+PhoneNumber+"')");
+                q.exec("INSERT INTO jobSeekers(id, password, phoneNumber) VALUES ('"+ID+"', '"+Password+"','"+PhoneNumber+"')");
                 VerificationCode *pg4 = new VerificationCode;
                 pg4->show();
                 this->close();
 
             }
-            else if(swDatabase == 0 && swCaptcha == 1){
+            else if(swDatabase == 0 && swCaptcha == 1 && swPhone == 1){
                 QMessageBox::warning(this, "Error", "The username already exist!");
                 swReCaptcha=1;
             }
-            else if(swDatabase == 1 && swCaptcha == 0){
+            else if(swDatabase == 1 && swCaptcha == 0 && swPhone == 1){
                 QMessageBox::warning(this, "Error", "Captcha code does not match!");
+                swReCaptcha=1;
+            }
+            else if(swDatabase == 1 && swCaptcha == 1 && swPhone == 0){
+                QMessageBox::warning(this, "Error", "Phone number already exist!");
+                swReCaptcha=1;
+            }
+            else if(swDatabase == 0 && swCaptcha == 0 && swPhone == 1){
+                QMessageBox::warning(this,
+                                     "Error",
+                                     "<ul>"
+                                     "<li>"
+                                     "The username already exist!"
+                                     "</li>"
+                                     "<li>"
+                                     "Captcha code does not match!"
+                                     "</li>"
+                                     "</ul>");
+                swReCaptcha=1;
+            }
+            else if(swDatabase == 1 && swCaptcha == 0 && swPhone == 0){
+                QMessageBox::warning(this,
+                                     "Error",
+                                     "<ul>"
+                                     "<li>"
+                                     "Captcha code does not match!"
+                                     "</li>"
+                                     "<li>"
+                                     "Phone number already exist!"
+                                     "</li>"
+                                     "</ul>");
+                swReCaptcha=1;
+            }
+            else if(swDatabase == 0 && swCaptcha == 1 && swPhone == 0){
+                QMessageBox::warning(this,
+                                     "Error",
+                                     "<ul>"
+                                     "<li>"
+                                     "The username already exist!"
+                                     "</li>"
+                                     "<li>"
+                                     "Phone number already exist!"
+                                     "</li>"
+                                     "</ul>");
                 swReCaptcha=1;
             }
             else{
@@ -85,6 +134,9 @@ void Register::on_pushButton_clicked()
                                      "</li>"
                                      "<li>"
                                      "Captcha code does not match!"
+                                     "</li>"
+                                     "<li>"
+                                     "Phone number already exist!"
                                      "</li>"
                                      "</ul>");
                 swReCaptcha=1;
