@@ -60,6 +60,32 @@ setProfile::setProfile(QWidget *parent) :
     ui->comboBox->addItem("98");
     ui->comboBox->addItem("1");
 
+    QStringList months = (QStringList()
+                          <<""
+                          <<"Jan"
+                          <<"Feb"
+                          <<"March"
+                          <<"April"
+                          <<"May"
+                          <<"June"
+                          <<"July"
+                          <<"August"
+                          <<"Sep"
+                          <<"Oct"
+                          <<"Nov"
+                          <<"Dec");
+    ui->comboBox_5->addItems(months);
+
+    QStringList days = (QStringList()
+                        << "" << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "10" << "11" << "12" << "13" << "14" << "15" << "16"
+                        << "17" << "18" << "19" <<"20" << "21" << "22" << "23" << "24" << "25" << "26" << "27" << "28" << "29" << "30" << "31");
+    ui->comboBox_6->addItems(days);
+
+    for(int comboYear = 1940; comboYear <= 2023; comboYear++){
+        ui->comboBox_7->addItem(QString::number(comboYear));
+    }
+
+
     ui->comboBox_2->addItem("");
     ui->comboBox_2->addItem("Job seeker");
     ui->comboBox_2->addItem("Employer");
@@ -170,23 +196,21 @@ void setProfile::on_pushButton_clicked()
     QString Lastname = ui->lineEdit_2->text();
     QString PhoneNum = ui->comboBox->currentText() + '-' + ui->lineEdit_3->text();
 
-    month = ui->lineEdit_5->text();
-    day = ui->lineEdit_6->text();
-    year = ui->lineEdit_7->text();
+    month = ui->comboBox_5->currentText();
+    day = ui->comboBox_6->currentText();
+    year = ui->comboBox_7->currentText();
 
-    QString Birthday = month + ',' + day + ',' + year;
+    QString Birthday = month + "," + day + "," + year;
+
+    QSqlQuery q;
+    q.exec("UPDATE jobSeekers SET name = '"+Name+"' , lastname = '"+Lastname+"', phoneNumber = '"+PhoneNum+"' , birthday = '"+Birthday+"' WHERE id = '"+ID+"'");
 
     if(swJobSeekers == 1){
         QString SchoolCollege = ui->lineEdit_4->text();
         QString IntendedJob = ui->comboBox_3->currentText();
         QString IntendedCompany = ui->comboBox_4->currentText();
 
-
-
-        ui->label_10->setText(IntendedJob);
-        QSqlQuery q;
-
-        q.exec("UPDATE jobSeekers SET  job = '"+IntendedJob+"' WHERE id = '"+ID+"'");
+        q.exec("UPDATE jobSeekers SET schoolCollege = '"+SchoolCollege+"', job = '"+IntendedJob+"', company = '"+IntendedCompany+"' WHERE id = '"+ID+"'");
 
     }
     else{
