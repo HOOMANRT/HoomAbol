@@ -178,6 +178,19 @@ color: rgb(0, 0, 0);</string>
       <string>Recieve the code</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>41</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>👈</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -186,7 +199,7 @@ color: rgb(0, 0, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>1066</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

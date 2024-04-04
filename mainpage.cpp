@@ -1,6 +1,8 @@
 #include "mainpage.h"
 #include "ui_mainpage.h"
 #include "setprofile.h"
+#include "splash.h"
+#include "login.h"
 
 #include <QSqlDatabase>
 #include "QSqlDriver"
@@ -46,5 +48,15 @@ void mainPage::on_pushButton_2_clicked()
     setProfile *pg5 = new setProfile;
     pg5->show();
     this->close();
+}
+
+
+void mainPage::on_pushButton_4_clicked()
+{
+    Splash *pg1=new Splash;
+    pg1->show();
+    this->close();
+    ID='\0';
+    PhoneNumber='\0';
 }
 

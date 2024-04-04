@@ -32,6 +32,8 @@ private slots:
 
     void on_lineEdit_4_textChanged(const QString &arg1);
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::VerificationCode *ui;
 };

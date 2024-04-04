@@ -24,6 +24,8 @@ private slots:
 
     void on_comboBox_7_activated();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::setProfile *ui;
 };

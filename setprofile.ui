@@ -32,8 +32,8 @@
     <widget class="QGroupBox" name="groupBox_2">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>10</y>
+       <x>20</x>
+       <y>40</y>
        <width>321</width>
        <height>271</height>
       </rect>
@@ -250,9 +250,6 @@ color: rgb(11, 11, 11);</string>
         <height>24</height>
        </rect>
       </property>
-      <property name="placeholderText">
-       <string/>
-      </property>
      </widget>
      <widget class="QComboBox" name="comboBox_6">
       <property name="geometry">
@@ -444,6 +441,19 @@ color: rgb(255, 255, 255);</string>
       <string>Save</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>41</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>👈</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -452,7 +462,7 @@ color: rgb(255, 255, 255);</string>
      <x>0</x>
      <y>0</y>
      <width>1191</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

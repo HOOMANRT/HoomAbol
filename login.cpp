@@ -5,6 +5,7 @@
 //#include "setprofile.h"
 #include "mainpage.h"
 #include "QMessageBox"
+#include "splash.h"
 
 #include <QSqlDatabase>
 #include "QSqlDriver"
@@ -89,5 +90,13 @@ void login::on_pushButton_clicked()
     else{
         QMessageBox::information(this,"Fill Form","Please FILL FORM and try again!");
     }
+}
+
+
+void login::on_pushButton_3_clicked()
+{
+    Splash *pg1=new Splash;
+    pg1->show();
+    this->close();
 }
 

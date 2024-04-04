@@ -3,6 +3,7 @@
 #include <iostream>
 #include <QMessageBox>
 #include "verificationcode.h"
+#include "login.h"
 
 #include <QSqlDatabase>
 #include "QSqlDriver"
@@ -293,5 +294,13 @@ void Register::on_comboBox_activated(int index)
             ui->lineEdit_4->setPlaceholderText("United States");
             break;
         }
+}
+
+
+void Register::on_pushButton_2_clicked()
+{
+    login *pg2=new login;
+    pg2->show();
+    this->close();
 }
 

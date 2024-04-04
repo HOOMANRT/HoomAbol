@@ -4,6 +4,7 @@
 #include "QString"
 #include <QMessageBox>
 #include "verificationcode.h"
+#include "mainpage.h"
 
 #include <QSqlDatabase>
 #include "QSqlDriver"
@@ -251,5 +252,13 @@ void setProfile::on_pushButton_clicked()
 void setProfile::on_comboBox_7_activated()
 {
     ui->label_20->setNum(2024 - ui->comboBox_7->currentText().toInt());
+}
+
+
+void setProfile::on_pushButton_2_clicked()
+{
+    mainPage *pg4=new mainPage;
+    pg4->show();
+    this->close();
 }
 

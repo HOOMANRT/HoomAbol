@@ -27,6 +27,8 @@ private slots:
 
     void on_comboBox_activated(int index);
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::Register *ui;
 };

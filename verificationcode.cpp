@@ -8,6 +8,7 @@
 #include "QTimer"
 #include "mainpage.h"
 #include "login.h"
+#include "register.h"
 
 #include <QSqlDatabase>
 #include "QSqlDriver"
@@ -190,5 +191,13 @@ void VerificationCode::on_lineEdit_4_textChanged(const QString &text)
     ui->pushButton->setFocus();
     ui->pushButton->setDefault(true);
     ui->pushButton->setAutoDefault(false);
+}
+
+
+void VerificationCode::on_pushButton_3_clicked()
+{
+    Register *pg3=new Register;
+    pg3->show();
+    this->close();
 }
 
