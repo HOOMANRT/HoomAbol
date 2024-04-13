@@ -204,18 +204,7 @@ void setProfile::on_pushButton_clicked()
         q.exec("UPDATE jobSeekers SET lastname = '"+Lastname+"' WHERE id = '"+ID+"'");
     }
 
-    if(ui->lineEdit_3->text() != NULL){
-        PhoneNumber = ui->comboBox->currentText() + '-' + ui->lineEdit_3->text();
-        q.exec("SELECT password FROM jobSeekers WHERE phoneNumber = '"+PhoneNumber+"'");
-        if(q.first()){
-            QMessageBox::warning(this, "Error", "Phone number already exist!");;
-        }
-        else{
-            VerificationCode *pg6 = new VerificationCode;
-            pg6->show();
-            this->close();
-        }
-    }
+
     if(ui->comboBox_5->currentText() != NULL && ui->comboBox_6->currentText() != NULL && ui->comboBox_7->currentText() != NULL){
         month = ui->comboBox_5->currentText();
         day = ui->comboBox_6->currentText();
@@ -224,6 +213,7 @@ void setProfile::on_pushButton_clicked()
         Birthday = month + "," + day + "," + year;
         q.exec("UPDATE jobSeekers SET birthday = '"+Birthday+"' WHERE id = '"+ID+"'");
     }
+
 
 
     if(swJobSeekers == 1){
@@ -245,6 +235,19 @@ void setProfile::on_pushButton_clicked()
     }
     else{
 
+    }
+
+    if(ui->lineEdit_3->text() != NULL){
+        PhoneNumber = ui->comboBox->currentText() + '-' + ui->lineEdit_3->text();
+        q.exec("SELECT password FROM jobSeekers WHERE phoneNumber = '"+PhoneNumber+"'");
+        if(q.first()){
+            QMessageBox::warning(this, "Error", "Phone number already exist!");;
+        }
+        else{
+            VerificationCode *pg6 = new VerificationCode;
+            pg6->show();
+            this->close();
+        }
     }
 
 }

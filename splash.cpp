@@ -24,8 +24,8 @@ Splash::Splash(QWidget *parent)
 {
     ui->setupUi(this);
 
-    this->setMinimumSize(1124,709);
-    this->setMaximumSize(1124,709);
+//    this->setMinimumSize(1124,709);
+//    this->setMaximumSize(1124,709);
 //    QVBoxLayout *layout = new QVBoxLayout;
 //    this->setLayout(layout);
 //    ui->label ->setLayout(layout);

@@ -10,11 +10,6 @@
         <file>cap-8.png</file>
         <file>cap-9.png</file>
     </qresource>
-    <qresource prefix="/back">
-        <file>back-captcha-1.jpg</file>
-        <file>back-login-1.jpg</file>
-        <file>back-verify-1.jpg</file>
-    </qresource>
     <qresource prefix="/icon">
         <file>icon-theme.png</file>
     </qresource>
@@ -24,5 +19,13 @@
         <file>im-login-1-drk.png</file>
         <file>im-splash-1.png</file>
         <file>im-splash-2.png</file>
+    </qresource>
+    <qresource prefix="/back">
+        <file>back-captcha-1.jpg</file>
+        <file>back-login-1.jpg</file>
+        <file>back-splash.png</file>
+        <file>back-splash-1.png</file>
+        <file>back-splash-2.jpg</file>
+        <file>back-verify-1.jpg</file>
     </qresource>
 </RCC>
